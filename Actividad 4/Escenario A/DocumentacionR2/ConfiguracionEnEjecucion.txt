@@ -1,0 +1,110 @@
+R2#show run
+Building configuration...
+
+Current configuration : 1373 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname R2
+!
+!
+!
+enable password ESCOM
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2901/K9 sn FTX15245TFL-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain-lookup
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 10.2.2.2 255.255.255.255
+!
+interface GigabitEthernet0/0
+ description Red LAN 10.10.10.0/24 en Gig0/0
+ ip address 10.10.10.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/3/0
+ description Red 192.168.10.0/30 de conexion con R1 en Serial 0/3/0 (DTE)
+ bandwidth 64
+ ip address 192.168.10.2 255.255.255.252
+ ip ospf hello-interval 5
+ ip ospf dead-interval 20
+!
+interface Serial0/3/1
+ description Red 192.168.10.8/30 de conexion con R3 en Serial 0/3/1 (DCE)
+ bandwidth 64
+ ip address 192.168.10.9 255.255.255.252
+ clock rate 2000000
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ log-adjacency-changes
+ auto-cost reference-bandwidth 10000
+ network 10.10.10.0 0.0.0.255 area 0
+ network 192.168.10.0 0.0.0.3 area 0
+ network 192.168.10.8 0.0.0.3 area 0
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ password REDES
+ login
+!
+line aux 0
+!
+line vty 0 4
+ password ESCOM
+ login
+!
+!
+!
+end

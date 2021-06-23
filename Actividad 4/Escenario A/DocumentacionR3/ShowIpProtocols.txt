@@ -1,0 +1,18 @@
+R3#show ip prot
+
+Routing Protocol is "ospf 1"
+  Outgoing update filter list for all interfaces is not set 
+  Incoming update filter list for all interfaces is not set 
+  Router ID 10.3.3.3
+  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+    172.16.1.32 0.0.0.7 area 0
+    192.168.10.4 0.0.0.3 area 0
+    192.168.10.8 0.0.0.3 area 0
+  Routing Information Sources:  
+    Gateway         Distance      Last Update 
+    10.1.1.1             110      00:17:12
+    10.2.2.2             110      00:17:12
+    10.3.3.3             110      00:20:02
+  Distance: (default is 110)

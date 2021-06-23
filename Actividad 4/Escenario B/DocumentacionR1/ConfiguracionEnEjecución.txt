@@ -1,0 +1,79 @@
+R1#show startup-config
+Using 681 bytes
+!
+version 12.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname R1
+!
+!
+!
+enable password ESCOM
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain-lookup
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 192.168.31.11 255.255.255.255
+!
+interface FastEthernet0/0
+ ip address 192.168.1.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+banner motd ^CSolo acceso autorizado!!^C
+!
+!
+!
+!
+!
+line con 0
+ password REDES
+ login
+!
+line aux 0
+!
+line vty 0 4
+ password ESCOM
+ login
+!
+!
+!
+end

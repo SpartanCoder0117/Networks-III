@@ -1,0 +1,16 @@
+R2#show ip protocols
+
+Routing Protocol is "ospf 1"
+  Outgoing update filter list for all interfaces is not set 
+  Incoming update filter list for all interfaces is not set 
+  Router ID 192.168.31.22
+  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+    192.168.1.0 0.0.0.255 area 0
+  Routing Information Sources:  
+    Gateway         Distance      Last Update 
+    192.168.31.11        110      00:18:04
+    192.168.31.22        110      00:18:04
+    192.168.31.33        110      00:17:59
+  Distance: (default is 110)

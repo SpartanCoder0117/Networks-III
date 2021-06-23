@@ -1,0 +1,5 @@
+R3#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol 
+FastEthernet0/0        192.168.1.3     YES manual up                    up 
+FastEthernet0/1        unassigned      YES unset  administratively down down 
+Loopback0              192.168.31.33   YES manual up                    up
